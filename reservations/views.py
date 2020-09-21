@@ -4,7 +4,15 @@ from .models import Room, Booking
 from .forms import AvailabilityForm
 from reservations.booking_functions.availability import check_availability
 
+
 # Create your views here.
+def home(request):
+    return HttpResponse('<h1>Landing page</h1>')
+
+
+def about(request):
+    return HttpResponse('<h1>About page</h1>')
+
 
 class RoomList(ListView):
     model = Room
@@ -12,6 +20,7 @@ class RoomList(ListView):
 
 class BookingList(ListView):
     model = Booking
+
 
 class BookingView(FormView):
     form_class = AvailabilityForm
