@@ -5,13 +5,20 @@ from .forms import AvailabilityForm
 from reservations.booking_functions.availability import check_availability
 
 
-# Create your views here.
 def home(request):
-    return HttpResponse('<h1>Landing page</h1>')
+    return render(request, 'reservations/base.html')
 
 
 def about(request):
-    return HttpResponse('<h1>About page</h1>')
+    return render(request, 'reservations/about.html')
+
+
+def login(request):
+    return render(request, 'reservations/login.html')
+
+
+def register(request):
+    return render(request, 'reservations/register.html')
 
 
 class RoomList(ListView):
