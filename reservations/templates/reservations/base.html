@@ -16,7 +16,8 @@
     {% endblock %}
 
     {% block corejs %}
-    <!-- first the jQuery, then Popper.js, last Bootstrap JS -->
+    <!-- first FontAwesome key then jQuery, then Popper.js, last Bootstrap JS -->
+    <script src="https://kit.fontawesome.com/68e72e7215.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
@@ -32,44 +33,57 @@
     <header class="row site-header">
 		<nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
 			<div class="container">
-				<a class="navbar-brand mr-4" href="{% url 'home-page' %}">Hotel Podvis Bor</a>
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
-	          <span class="navbar-toggler-icon"></span>
-	          </button>
-				<div class="collapse navbar-collapse" id="navbarToggle">
-					<div class="navbar-nav mr-auto">
-						<a class="nav-item nav-link" href="{% url 'home-page' %}">Home</a>
-						<a class="nav-item nav-link" href="{% url 'about-page' %}">About</a>
-					</div>
-					<!-- Navbar Right Side -->
-					<div class="navbar-nav">
+                    <div>
+                        <a class="navbar-brand mr-4" href="{% url 'home-page' %}">Hotel Podvis Bor</a>
+                    </div>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    <div class="collapse navbar-collapse" id="navbarToggle">
+                        <div class="navbar-nav mr-auto">
+                        </div>
+                        <!-- Navbar Right Side -->
+                        <div class="navbar-nav title-menu">
                             <a class="nav-item nav-link" href="{% url 'booking_view' %}">Book Now</a>
+                            <a class="nav-item nav-link" href="{% url 'about-page' %}">Our Story</a>
                             <a class="nav-item nav-link" href="{% url 'login-page' %}">Login</a>
                             <a class="nav-item nav-link" href="{% url 'register-page' %}">Register</a>
-					</div>
-				</div>
+                        </div>
+                    </div>
 			</div>
 		</nav>
 	</header>
-    <main role="main" class="container">
-      <div class="row">
-		<div class="col-md-8">
-			{% block content %}{% endblock %}
-		</div>
-        <div class="col-md-4">
-          <div class="content-section">
-            <h3>Reviews Score</h3>
-            <p class="text-muted">You can put any information here you'd like.
-              <ul class="list-group">
-                <li class="list-group-item list-group-item-light">Latest Reviews</li>
-                <li class="list-group-item list-group-item-light">Dashboard</li>
-                <li class="list-group-item list-group-item-light">Tips for Trips</li>
-                <li class="list-group-item list-group-item-light">etc</li>
-              </ul>
-            </p>
-          </div>
-        </div>
-      </div>
-    </main>
+		<section role="main" class="container">
+			<div class="row">
+				<div class="col-md-10">
+					{% block content %}{% endblock %}
+				</div>
+		
+			</div>
+		</section>
+		<section class="container">
+			<div class="card mb-3">
+				<img class="card-img-top" src="../media/strandzha.jpg" alt="image cap">
+				<div class="col-md-2 card-img-overlay">
+					<div class="content-section">
+						<h3>Reviews Score</h3>
+						<p class="text-muted">8.5
+							<ul class="list-group">
+							</ul>
+						</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="card-body">
+							<h5 class="card-title">Our Location</h5>
+							<a href="#" class="btn btn-primary">Check Google Maps</a>
+						</div>
+						</div>
+					</div>
+				</div>
+				</div>
+				
+		</section>
+
 </body>
 </html>
