@@ -31,7 +31,7 @@ class BookingView(FormView):
                 user = self.request.user,
                 room = room,
                 check_in = data['check_in'],
-                check_out = data['check_out'],
+                check_out = data['check_out']
             )
             booking.save()
             return HttpResponse(booking)
